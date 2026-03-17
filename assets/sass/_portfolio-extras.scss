@@ -1,0 +1,218 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+
+$accent-color: _palette('accent3');
+$accent-color-alt: _palette('accent1');
+$bg-dark: #1a1a2e;
+$text-glow: 0 0 10px rgba($accent-color, 0.5);
+
+html {
+    scroll-behavior: smooth;
+}
+
+#intro {
+    background-image: linear-gradient(rgba(240, 245, 255, 0.7), rgba(240, 245, 255, 0.7)), url('../images/bg01.png') !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+
+    h1 {
+        text-shadow: none; // Remove glow for light theme
+        background: linear-gradient(to right, _palette('fg-bold'), _palette('accent1'));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800; // Making it bold for better contrast
+    }
+
+    p {
+        font-size: 1.2em;
+        color: _palette('fg');
+    }
+
+    .inner {
+        max-width: 45em;
+    }
+}
+
+.features {
+    section {
+        @include vendor('transition', (
+            'transform 0.3s ease',
+            'background 0.3s ease'
+        ));
+        border-radius: 12px;
+        padding: 2em;
+
+        &:hover {
+            @include vendor('transform', 'translateY(-10px)');
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    .icon {
+        color: $accent-color;
+        text-shadow: $text-glow;
+    }
+}
+
+.button {
+    &.primary, &.submit {
+        background-image: linear-gradient(to right, $accent-color-alt, $accent-color);
+        border: none;
+        @include vendor('transition', (
+            'filter 0.3s ease',
+            'transform 0.2s ease'
+        ));
+
+        &:hover {
+            filter: brightness(1.2);
+            @include vendor('transform', 'scale(1.05)');
+        }
+    }
+}
+
+#sidebar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px);
+    border-right: solid 1px _palette('border');
+    box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+    width: 12em !important;
+
+    nav {
+        ul {
+            li {
+                a {
+                    @include vendor('transition', (
+                        'color 0.3s ease',
+                        'letter-spacing 0.3s ease'
+                    ));
+                    font-size: 0.7em !important;
+                    letter-spacing: 0.15em !important;
+                    color: _palette('fg') !important;
+
+                    &:hover {
+                        color: $accent-color !important;
+                        letter-spacing: 1px;
+                    }
+
+                    span {
+                        border-bottom-color: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+
+    & + #wrapper, 
+    & + #wrapper + #footer {
+        margin-left: 12em !important;
+    }
+
+    @include breakpoint('<=large') {
+        width: 100% !important;
+
+        & + #wrapper, 
+        & + #wrapper + #footer {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.icon.major {
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    color: $accent-color !important;
+    font-size: 2.5em !important;
+    margin-bottom: 0.5em !important;
+
+    &:before {
+        font-size: 1em !important;
+        color: inherit !important;
+    }
+}
+
+.wrapper {
+    &.style1 {
+        background-color: _palette('bg-alt');
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/bg01.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    &.style2 {
+        background-color: #f1f5f9; // Soft blue-gray for depth
+        background-image: linear-gradient(rgba(241, 245, 249, 0.95), rgba(241, 245, 249, 0.95)), url('../images/bg02.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    &.style3 {
+        background-color: #fef2f2; // Soft pink-white
+        background-image: linear-gradient(rgba(254, 242, 242, 0.95), rgba(254, 242, 242, 0.95)), url('../images/bg01.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        // removing hue-rotate for a cleaner soft look
+        
+        & > .inner {
+            filter: none;
+        }
+    }
+}
+
+body:not(.is-preload) #header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border-bottom: solid 1px _palette('border');
+    
+    a.title {
+        color: _palette('fg-bold') !important;
+    }
+    
+    nav ul li a {
+        color: _palette('fg') !important;
+        &:hover {
+            color: $accent-color !important;
+        }
+    }
+}
+
+/* Enhancing Features (Yeteneklerim) for Light Theme */
+.features {
+    background: #ffffff !important;
+    border: solid 1px _palette('border') !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    
+    section {
+        border-color: _palette('border') !important;
+        
+        h3 {
+            color: _palette('fg-bold') !important;
+        }
+        
+        p {
+            color: _palette('fg') !important;
+        }
+    }
+}
+
+/* Ensure spotlights content is left-aligned and matches other sections */
+.spotlights > section {
+    > .content {
+        text-align: left !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        
+        > .inner {
+            max-width: 45em; // Match intro's text width
+            margin: 0 !important;
+        }
+    }
+}
