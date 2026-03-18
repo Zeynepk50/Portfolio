@@ -1,30 +1,66 @@
-///
-/// Hyperspace by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
+/* İkon ve İkon Listesi Bileşenleri */
 
-/* Icons */
+// Tekil İkon Stilleri
+.icon {
+    @include icon;
+    border-bottom: none;
+    position: relative;
 
-	ul.icons {
-		cursor: default;
-		list-style: none;
-		padding-left: 0;
+    > .label {
+        display: none;
+    }
 
-		li {
-			display: inline-block;
-			padding: 0 0.75em 0 0;
+    &.solid:before {
+        font-weight: 900;
+    }
 
-			&:last-child {
-				padding-right: 0;
-			}
+    &.brands:before {
+        font-family: 'Font Awesome 5 Brands';
+    }
 
-			> a, > span {
-				border: 0;
+    // Özellikler bölümü için büyük ikonlar
+    &.major {
+        background: transparent !important;
+        box-shadow: none !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: 1 !important;
+        color: _palette('accent1') !important;
+        font-size: 2.5em !important;
+        margin-bottom: 0.5em !important;
+        display: inline-block;
 
-				.label {
-					display: none;
-				}
-			}
-		}
-	}
+        &:before {
+            font-size: 1.25em !important;
+            color: inherit !important;
+        }
+    }
+}
+
+// İkon Listesi (Sosyal Medya vb.)
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        padding-right: 1.25em;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        a {
+            border: 0;
+            color: _palette('fg');
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+
+            &:hover {
+                color: _palette('accent1');
+                transform: scale(1.1);
+            }
+        }
+    }
+}

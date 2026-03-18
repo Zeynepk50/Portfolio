@@ -6,28 +6,44 @@
 
 /* Intro */
 
-	#intro {
-		background-attachment: fixed;
-		background-image: url('images/intro.svg');
-		background-position: top right;
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
+/* Giriş (Intro) Bölümü */
+#intro {
+    // Hafif arka plan görseli ve gradyanı
+    background-image: linear-gradient(rgba(240, 245, 255, 0.7), rgba(240, 245, 255, 0.7)), url('../images/bg01.png') !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center;
 
-		p {
-			font-size: 1.25em;
+    .inner {
+        max-width: 45em;
+    }
 
-			@include breakpoint('<=medium') {
-				br {
-					display: none;
-				}
-			}
+    h1 {
+        // Renkli gradyan başlık metni
+        background: linear-gradient(to right, _palette('fg-bold'), _palette('accent1'));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        text-shadow: none;
+    }
 
-			@include breakpoint('<=small') {
-				font-size: 1em;
-			}
-		}
+    p {
+        font-size: 1.25em;
+        color: _palette('fg');
 
-		@include breakpoint('<=large') {
-			background-attachment: scroll;
-		}
-	}
+        @include breakpoint('<=medium') {
+            br {
+                display: none;
+            }
+        }
+
+        @include breakpoint('<=small') {
+            font-size: 1em;
+        }
+    }
+
+    @include breakpoint('<=large') {
+        background-attachment: scroll !important;
+    }
+}
