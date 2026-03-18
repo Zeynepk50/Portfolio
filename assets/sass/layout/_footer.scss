@@ -1,52 +1,48 @@
-///
-/// Hyperspace by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
+// ============================================================
+// layout/_footer.scss
+// Sayfa altı footer bölümü.
+// Sidebar offset (#sidebar + #wrapper + #footer) layout/_wrapper.scss'de tanımlı,
+// burada tekrar yazılmaz.
+// ============================================================
 
-/* Sayfa Sonu (Footer) */
 #footer {
-    background-color: #f8fafc !important;
-    background-image: none !important;
-    border-top: solid 1px _palette('border');
-    padding: 3rem 0;
-    
-    // Sidebar varlığında kaydırma ayarı
-    @include breakpoint('>large') {
-        margin-left: 12em !important;
-    }
+  background-color: _palette(bg);      // #f8fafc — sayfa arka planıyla aynı
+  border-top: solid 1px _palette(border);
+  padding: 3rem 0;
 
-    .inner {
-        text-align: center;
+  > .inner {
+    text-align: center;
 
-        .menu {
-            list-style: none;
-            padding: 0;
-            font-size: 0.8em;
-            color: _palette('fg-light') !important;
+    // ul.menu — "© Zeynep | Tasarım: HTML5 UP" gibi footer linkleri
+    .menu {
+      list-style: none;
+      padding: 0;
+      font-size: 0.8em;
+      color: _palette(fg-light);
 
-            li {
-                display: inline-block;
-                border-left: solid 1px _palette('border');
-                margin-left: 1em;
-                padding-left: 1em;
+      li {
+        display: inline-block;
+        border-left: solid 1px _palette(border);
+        margin-left: 1em;
+        padding-left: 1em;
 
-                &:first-child {
-                    border-left: 0;
-                    margin-left: 0;
-                    padding-left: 0;
-                }
-
-                a {
-                    color: _palette('accent1') !important;
-                    border-bottom-color: transparent !important;
-                    transition: color 0.2s ease;
-
-                    &:hover {
-                        color: _palette('accent3') !important;
-                    }
-                }
-            }
+        // İlk item'ın sol ayracı olmaz
+        &:first-child {
+          border-left: 0;
+          margin-left: 0;
+          padding-left: 0;
         }
+
+        a {
+          color: _palette(accent1);
+          border-bottom-color: transparent;
+          transition: color _duration(transition) ease;
+
+          &:hover {
+            color: _palette(accent3);
+          }
+        }
+      }
     }
+  }
 }
