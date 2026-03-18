@@ -112,7 +112,7 @@ body,
 input,
 select,
 textarea {
-  color: #475569;
+  color: #1e293b;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16.5pt;
   font-weight: normal;
@@ -255,7 +255,7 @@ h1.major {
 }
 
 h1.major::after {
-  background-image: linear-gradient(to right, #93c5fd, #f9a8d4);
+  background-image: linear-gradient(to right, #2b72c4, #a8d2f9);
   transition: max-width 0.2s ease;
   border-radius: 0.2em;
   bottom: 0;
@@ -352,7 +352,7 @@ button:hover::after,
 
 .button.primary,
 .button.submit {
-  background-image: linear-gradient(to right, #93c5fd, #f9a8d4);
+  background-image: linear-gradient(to right, #2b72c4, #a8d2f9);
   border: none !important;
   color: #1e293b !important;
   transition: filter 0.3s ease, transform 0.2s ease;
@@ -505,7 +505,7 @@ textarea {
   width: auto !important;
   height: auto !important;
   line-height: 1 !important;
-  color: #f9a8d4 !important;
+  color: #a8bef9 !important;
   font-size: 2.5em !important;
   margin-bottom: 0.5em !important;
   display: block;
@@ -647,6 +647,165 @@ ul.menu>li:first-child {
   }
 }
 
+/* 15. INTRO
+   ------------------------------------------------------------ */
+#intro {
+  background-image: linear-gradient(rgba(240, 245, 255, 0.7), rgba(240, 245, 255, 0.7)), url("../images/bg01.png") !important;
+  background-attachment: fixed !important;
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+#intro h1 {
+  text-shadow: none;
+  background: linear-gradient(to right, #1e293b, #93c5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+#intro p {
+  font-size: 1.2em;
+  color: #1e293b;
+}
+
+#intro .inner {
+  max-width: 45em;
+}
+
+@media screen and (max-width: 980px) {
+  #intro p br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #intro p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #intro {
+    background-attachment: scroll !important;
+  }
+}
+
+
+/* 11. SPOTLIGHTS (Projelerim)
+   ------------------------------------------------------------ */
+.spotlights>section {
+  display: flex;
+  flex-direction: row;
+  min-height: 22.5em;
+}
+
+.spotlights>section>.image {
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  display: block;
+  position: relative;
+  width: 25em;
+}
+
+.spotlights>section>.image img {
+  border-radius: 0;
+  display: block;
+}
+
+.spotlights>section>.image::before {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(248, 250, 252, 0.9);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spotlights>section>.content {
+  padding: 4em 5em 2em 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left !important;
+  align-items: flex-start !important;
+  width: 50em;
+  flex: 1;
+}
+
+.spotlights>section>.content>.inner {
+  transform: translateX(0) translateY(0);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 45em;
+  margin: 0 !important;
+  opacity: 1;
+}
+
+.spotlights>section:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.spotlights>section:nth-child(3) {
+  background-color: rgba(0, 0, 0, 0.10);
+}
+
+.spotlights>section.inactive>.image::before,
+body.is-preload .spotlights>section>.image::before {
+  opacity: 1;
+}
+
+.spotlights>section.inactive>.content>.inner,
+body.is-preload .spotlights>section>.content>.inner {
+  transform: translateX(-1em);
+  opacity: 0;
+}
+
+@media screen and (max-width: 1680px) {
+  .spotlights>section>.content {
+    padding: 4em 4em 2em 4em;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .spotlights>section {
+    display: block;
+  }
+
+  .spotlights>section>.image {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .spotlights>section>.content {
+    width: 100%;
+  }
+
+  .spotlights>section.inactive>.content>.inner,
+  body.is-preload .spotlights>section>.content>.inner {
+    transform: translateY(1em);
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .spotlights>section>.image {
+    height: 50vh;
+    min-height: 15em;
+  }
+
+  .spotlights>section>.content {
+    padding: 3em 2em 1em 2em;
+  }
+}
+
+
+
 /* 9. FEATURES (Yeteneklerim)
    ------------------------------------------------------------ */
 .features {
@@ -688,7 +847,7 @@ ul.menu>li:first-child {
 }
 
 .features section p {
-  color: #475569 !important;
+  color: #1e293b !important;
   font-size: 0.95em !important;
 }
 
@@ -858,115 +1017,6 @@ ul.menu>li:first-child {
   }
 }
 
-/* 11. SPOTLIGHTS (Projelerim)
-   ------------------------------------------------------------ */
-.spotlights>section {
-  display: flex;
-  flex-direction: row;
-  min-height: 22.5em;
-}
-
-.spotlights>section>.image {
-  background-position: center;
-  background-size: cover;
-  border-radius: 0;
-  display: block;
-  position: relative;
-  width: 25em;
-}
-
-.spotlights>section>.image img {
-  border-radius: 0;
-  display: block;
-}
-
-.spotlights>section>.image::before {
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(248, 250, 252, 0.9);
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.spotlights>section>.content {
-  padding: 4em 5em 2em 5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left !important;
-  align-items: flex-start !important;
-  width: 50em;
-  flex: 1;
-}
-
-.spotlights>section>.content>.inner {
-  transform: translateX(0) translateY(0);
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  max-width: 45em;
-  margin: 0 !important;
-  opacity: 1;
-}
-
-.spotlights>section:nth-child(2) {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.spotlights>section:nth-child(3) {
-  background-color: rgba(0, 0, 0, 0.10);
-}
-
-.spotlights>section.inactive>.image::before,
-body.is-preload .spotlights>section>.image::before {
-  opacity: 1;
-}
-
-.spotlights>section.inactive>.content>.inner,
-body.is-preload .spotlights>section>.content>.inner {
-  transform: translateX(-1em);
-  opacity: 0;
-}
-
-@media screen and (max-width: 1680px) {
-  .spotlights>section>.content {
-    padding: 4em 4em 2em 4em;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .spotlights>section {
-    display: block;
-  }
-
-  .spotlights>section>.image {
-    width: 100%;
-    height: 50vh;
-  }
-
-  .spotlights>section>.content {
-    width: 100%;
-  }
-
-  .spotlights>section.inactive>.content>.inner,
-  body.is-preload .spotlights>section>.content>.inner {
-    transform: translateY(1em);
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .spotlights>section>.image {
-    height: 50vh;
-    min-height: 15em;
-  }
-
-  .spotlights>section>.content {
-    padding: 3em 2em 1em 2em;
-  }
-}
 
 /* 12. WRAPPER
    ------------------------------------------------------------ */
@@ -1007,24 +1057,24 @@ body.is-preload .spotlights>section>.content>.inner {
 }
 
 .wrapper.style1 {
-  background-color: #ffffff;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/bg01.png");
+  background-color: #bae6fd;
+  background-image: linear-gradient(rgba(186, 230, 253, 0.9), rgba(186, 230, 253, 0.9)), url("../images/bg01.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .wrapper.style2 {
-  background-color: #f1f5f9;
-  background-image: linear-gradient(rgba(241, 245, 249, 0.95), rgba(241, 245, 249, 0.95)), url("../images/bg02.png");
+  background-color: #f0f9ff;
+  background-image: linear-gradient(rgba(240, 249, 255, 0.9), rgba(240, 249, 255, 0.9)), url("../images/bg02.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .wrapper.style3 {
-  background-color: #fef2f2;
-  background-image: linear-gradient(rgba(254, 242, 242, 0.95), rgba(254, 242, 242, 0.95)), url("../images/bg01.png");
+  background-color: #e0f2fe;
+  background-image: linear-gradient(rgba(224, 242, 254, 0.95), rgba(224, 242, 254, 0.95)), url("../images/bg01.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1107,7 +1157,7 @@ body.is-preload .wrapper.fade-up>.inner {
   padding: 2.5em;
   overflow-x: hidden;
   overflow-y: auto;
-  text-align: right;
+  text-align: left;
   cursor: default;
 }
 
@@ -1184,7 +1234,7 @@ body.is-preload #sidebar nav>ul>li {
 #sidebar nav a {
   transition: color 0.3s ease, letter-spacing 0.3s ease;
   border: 0;
-  color: #475569 !important;
+  color: #1e293b !important;
   display: block;
   font-size: 0.7em !important;
   font-weight: bold;
@@ -1204,7 +1254,7 @@ body.is-preload #sidebar nav>ul>li {
   content: '';
   height: 0.2em;
   position: absolute;
-  right: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -1213,13 +1263,13 @@ body.is-preload #sidebar nav>ul>li {
 }
 
 #sidebar nav a::after {
-  background-image: linear-gradient(to right, #93c5fd, #f9a8d4);
+  background-image: linear-gradient(to right, #2b72c4, #a8d2f9);
   transition: max-width 0.2s ease;
   max-width: 0;
 }
 
 #sidebar nav a:hover {
-  color: #f9a8d4 !important;
+  color: #2b72c4 !important;
   letter-spacing: 1px;
 }
 
@@ -1299,51 +1349,6 @@ body.is-preload #sidebar nav ul li {
   }
 }
 
-/* 15. INTRO
-   ------------------------------------------------------------ */
-#intro {
-  background-image: linear-gradient(rgba(240, 245, 255, 0.7), rgba(240, 245, 255, 0.7)), url("../images/bg01.png") !important;
-  background-attachment: fixed !important;
-  background-size: cover;
-  background-position: top right;
-  background-repeat: no-repeat;
-}
-
-#intro h1 {
-  text-shadow: none;
-  background: linear-gradient(to right, #1e293b, #93c5fd);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-}
-
-#intro p {
-  font-size: 1.2em;
-  color: #475569;
-}
-
-#intro .inner {
-  max-width: 45em;
-}
-
-@media screen and (max-width: 980px) {
-  #intro p br {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  #intro p {
-    font-size: 1em;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  #intro {
-    background-attachment: scroll !important;
-  }
-}
 
 /* 16. FOOTER
    ------------------------------------------------------------ */
