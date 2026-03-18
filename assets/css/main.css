@@ -693,7 +693,7 @@ ul.menu>li:first-child {
 }
 
 .features section .icon {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   transform: scale(1);
   position: relative;
   left: 0;
@@ -714,19 +714,19 @@ ul.menu>li:first-child {
 }
 
 .features section:nth-child(3) .icon {
-  transition-delay: 0.45s;
+  transition-delay: 0.40s;
 }
 
 .features section:nth-child(4) .icon {
-  transition-delay: 0.60s;
+  transition-delay: 0.50s;
 }
 
 .features section:nth-child(5) .icon {
-  transition-delay: 0.75s;
+  transition-delay: 0.60s;
 }
 
 .features section:nth-child(6) .icon {
-  transition-delay: 0.90s;
+  transition-delay: 0.70s;
 }
 
 .features.inactive section .icon {
@@ -881,7 +881,7 @@ ul.menu>li:first-child {
 }
 
 .spotlights>section>.image::before {
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
   background: rgba(248, 250, 252, 0.9);
   content: '';
   display: block;
@@ -906,7 +906,7 @@ ul.menu>li:first-child {
 
 .spotlights>section>.content>.inner {
   transform: translateX(0) translateY(0);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   max-width: 45em;
   margin: 0 !important;
   opacity: 1;
@@ -1056,7 +1056,7 @@ body.is-preload .spotlights>section>.content>.inner {
 
 .wrapper.fade-up>.inner {
   transform: translateY(0);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 1;
 }
 
@@ -1115,7 +1115,7 @@ body.is-preload .wrapper.fade-up>.inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease;
   min-height: 100%;
   opacity: 1;
   width: 100%;
@@ -1128,7 +1128,7 @@ body.is-preload .wrapper.fade-up>.inner {
 
 #sidebar nav>ul>li {
   transform: translateY(0);
-  transition: opacity 0.15s ease, transform 0.75s ease;
+  transition: opacity 0.15s ease, transform 0.3s ease;
   margin: 1.5em 0 0 0;
   opacity: 1;
   padding: 0;
@@ -1152,7 +1152,7 @@ body.is-preload .wrapper.fade-up>.inner {
 }
 
 #sidebar nav>ul>li:nth-child(4) {
-  transition-delay: 1.05s;
+  transition-delay: 1.0s;
 }
 
 #sidebar nav a {
